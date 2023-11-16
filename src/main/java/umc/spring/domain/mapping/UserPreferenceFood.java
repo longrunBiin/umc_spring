@@ -24,4 +24,5 @@ public class UserPreferenceFood extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "food_id")
     private PreferenceFood preferenceFood;
+    //
 }
