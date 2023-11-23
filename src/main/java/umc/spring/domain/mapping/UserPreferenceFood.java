@@ -22,7 +22,7 @@ public class UserPreferenceFood extends BaseEntity {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "food_id")
+    @JoinColumn(name = "preference_food_id")
     private PreferenceFood preferenceFood;
 
 }
