@@ -2,12 +2,8 @@ package umc.spring.domain;
 
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
-import umc.spring.domain.mapping.UserPreferenceFood;
-import umc.spring.domain.mapping.UserReview;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter

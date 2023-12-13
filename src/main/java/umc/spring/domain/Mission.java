@@ -3,8 +3,7 @@ package umc.spring.domain;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
 import umc.spring.domain.enums.MissionStatus;
-import umc.spring.domain.mapping.UserMission;
-import umc.spring.domain.mapping.UserReview;
+import umc.spring.domain.mapping.MemberMission;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -42,7 +41,7 @@ public class Mission extends BaseEntity {
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
-    private List<UserMission> userMissionList = new ArrayList<>();
+    private List<MemberMission> userMissionList = new ArrayList<>();
 
 
 
