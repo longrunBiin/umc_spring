@@ -3,9 +3,8 @@ package umc.spring.domain.mapping;
 import lombok.*;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Region;
-import umc.spring.domain.User;
+import umc.spring.domain.Member;
 import umc.spring.domain.common.BaseEntity;
-import umc.spring.domain.enums.MissionStatus;
 
 import javax.persistence.*;
 
@@ -14,7 +13,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class UserMission extends BaseEntity {
+public class MemberMission extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,8 +21,8 @@ public class UserMission extends BaseEntity {
     private Integer successMissionCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
