@@ -2,7 +2,7 @@ package umc.spring.domain;
 
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
-import umc.spring.domain.mapping.UserReview;
+import umc.spring.domain.mapping.MemberReview;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,9 +22,9 @@ public class Review extends BaseEntity {
 
     private String content;
 
-    private Long userId;
+    private Long memberId;
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
-    private List<UserReview> userReviewList = new ArrayList<>();
+    private List<MemberReview> memberReviewList = new ArrayList<>();
 
 }

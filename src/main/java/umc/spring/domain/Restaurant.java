@@ -2,8 +2,7 @@ package umc.spring.domain;
 
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
-import umc.spring.domain.mapping.UserMission;
-import umc.spring.domain.mapping.UserReview;
+import umc.spring.domain.mapping.MemberReview;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,6 +26,6 @@ public class Restaurant extends BaseEntity {
     private Region region;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
-    private List<UserReview> userReviewList = new ArrayList<>();
+    private List<MemberReview> memberReviewList = new ArrayList<>();
 
 }
