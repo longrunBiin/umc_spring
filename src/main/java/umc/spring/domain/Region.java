@@ -2,7 +2,7 @@ package umc.spring.domain;
 
 
 import lombok.*;
-import umc.spring.domain.mapping.UserMission;
+import umc.spring.domain.mapping.MemberMission;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Region {
     private String regionName;
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
-    private List<UserMission> userMissionList = new ArrayList<>();
+    private List<MemberMission> userMissionList = new ArrayList<>();
 
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
     private List<Restaurant> restaurantList = new ArrayList<>();
