@@ -1,10 +1,7 @@
 package umc.spring.web.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import umc.spring.apiPayLoad.ApiResponse;
 import umc.spring.converter.RestaurantConverter;
 import umc.spring.domain.Restaurant;
@@ -21,9 +18,9 @@ public class RestaurantRestController {
 
     private final RestaurantCommandService restaurantCommandService;
 
-    @PostMapping("/")
-    public ApiResponse<RestaurantResponseDTO.JoinResultDTO> addStore(@RequestBody @Valid RestaurantRequestDTO.JoinDto request){
-        Restaurant restaurant = restaurantCommandService.addRestaurant(request);
+    @PostMapping("/regions/{restaurantId}")
+    public ApiResponse<RestaurantResponseDTO.JoinResultDTO> addRestaurant(@RequestBody @Valid RestaurantRequestDTO.JoinDto request, @PathVariable long restaurantId){
+        Restaurant restaurant = restaurantCommandService.addRestaurant(restaurantId, request);
         return ApiResponse.onSuccess(RestaurantConverter.toJoinResultDTO(restaurant));
     }
 }

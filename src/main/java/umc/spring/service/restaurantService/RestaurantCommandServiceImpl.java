@@ -22,11 +22,10 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
 
     @Override
     @Transactional
-    public Restaurant addRestaurant(RestaurantRequestDTO.JoinDto request) {
+    public Restaurant addRestaurant(long restaurantId, RestaurantRequestDTO.JoinDto request) {
         Restaurant restaurant = RestaurantConverter.toRestaurant(request);
-        String regionName = request.getAddress();
 
-        Region region = regionRepository.findByRegionName(regionName).orElseThrow(() -> new RegionHandler(ErrorStatus.REGION_NOT_FOUND));
+        Region region = regionRepository.findById(restaurantId).orElseThrow(() -> new RegionHandler(ErrorStatus.REGION_NOT_FOUND));
 
         restaurant.setRegion(region);
         return restaurantRepository.save(restaurant);
