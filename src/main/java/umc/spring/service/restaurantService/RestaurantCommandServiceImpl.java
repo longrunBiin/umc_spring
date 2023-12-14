@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.spring.apiPayLoad.code.status.ErrorStatus;
-import umc.spring.apiPayLoad.exception.handler.RegionHandler;
+import umc.spring.apiPayLoad.exception.handler.RestaurantHandler;
 import umc.spring.converter.RestaurantConverter;
 import umc.spring.domain.Region;
 import umc.spring.domain.Restaurant;
@@ -26,7 +26,7 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
         Restaurant restaurant = RestaurantConverter.toRestaurant(request);
         String regionName = request.getAddress();
 
-        Region region = regionRepository.findByRegionName(regionName).orElseThrow(() -> new RegionHandler(ErrorStatus.REGION_NOT_FOUND));
+        Region region = regionRepository.findByRegionName(regionName).orElseThrow(() -> new RestaurantHandler(ErrorStatus.REGION_NOT_FOUND));
 
         restaurant.setRegion(region);
         return restaurantRepository.save(restaurant);

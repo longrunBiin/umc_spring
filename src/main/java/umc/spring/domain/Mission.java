@@ -44,5 +44,12 @@ public class Mission extends BaseEntity {
     private List<MemberMission> userMissionList = new ArrayList<>();
 
 
+    public void setRestaurant(Restaurant restaurant) {
+        if (this.restaurant != null) {
+            restaurant.getMissionList().remove(this);
+        }
+        this.restaurant = restaurant;
+        restaurant.getMissionList().add(this);
+    }
 
 }
