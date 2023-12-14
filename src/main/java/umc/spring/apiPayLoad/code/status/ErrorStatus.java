@@ -24,7 +24,9 @@ public enum ErrorStatus implements BaseErrorCode {
 
     RESTAURANT_NOT_FOUND(HttpStatus.BAD_REQUEST, "REVIEW400", "레스토랑을 찾을 수 없습니다."),
 
-    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST, "REGION400", "지역을 찾을 수 없습니다.");
+    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST, "REGION400", "지역을 찾을 수 없습니다."),
+
+    MEMBER_MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MISSION400", "미션을 찾을 수 없습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;

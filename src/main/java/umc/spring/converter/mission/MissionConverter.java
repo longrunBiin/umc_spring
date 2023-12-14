@@ -1,4 +1,4 @@
-package umc.spring.converter;
+package umc.spring.converter.mission;
 
 import umc.spring.domain.Mission;
 import umc.spring.domain.enums.Gender;
@@ -25,6 +25,9 @@ public class MissionConverter {
                 status = MissionStatus.NOTCOMPLETE;
                 break;
             case 2:
+                status = MissionStatus.PROCEEDING;
+                break;
+            case 3:
                 status = MissionStatus.COMPLETE;
                 break;
         }
