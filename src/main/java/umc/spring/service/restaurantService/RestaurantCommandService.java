@@ -8,5 +8,5 @@ import umc.spring.web.dto.restaurant.RestaurantRequestDTO;
 import umc.spring.web.dto.review.ReviewRequestDTO;
 
 public interface RestaurantCommandService {
-    Restaurant addRestaurant(RestaurantRequestDTO.JoinDto request);
+    Restaurant addRestaurant(RestaurantRequestDTO.RestaurantDto request);
 }

@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MemberMissionConverter {
-    public static MissionResponseDTO.JoinResultDTO toChallengeMissionReulstDto(MemberMission memberMission) {
+    public static MissionResponseDTO.MissionResultDTO toChallengeMissionReulstDto(MemberMission memberMission) {
 
         Mission mission = memberMission.getMission();
         Restaurant restaurant = mission.getRestaurant();
 
-        return MissionResponseDTO.JoinResultDTO.builder()
+        return MissionResponseDTO.MissionResultDTO.builder()
                 .missionId(mission.getMissionId())
                 .missionStatus(memberMission.getMissionStatus())
                 .point(mission.getPoint())

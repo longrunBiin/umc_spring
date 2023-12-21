@@ -25,7 +25,7 @@ public class MissionCommandServiceImpl implements MissionCommandService {
     private final MemberMissionRepository memberMissionRepository;
 
     @Override
-    public Mission addMission(long storeId, MissionRequestDTO.JoinDto request) {
+    public Mission addMission(long storeId, MissionRequestDTO.MissionDto request) {
         Mission mission = MissionConverter.toMission(request);
 
         Restaurant restaurant = restaurantRepository.findById(storeId).orElseThrow(() -> new RestaurantHandler(ErrorStatus.RESTAURANT_NOT_FOUND));

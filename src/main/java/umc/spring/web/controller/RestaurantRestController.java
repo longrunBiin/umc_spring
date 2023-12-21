@@ -22,8 +22,8 @@ public class RestaurantRestController {
     private final RestaurantCommandService restaurantCommandService;
 
     @PostMapping("/")
-    public ApiResponse<RestaurantResponseDTO.JoinResultDTO> addStore(@RequestBody @Valid RestaurantRequestDTO.JoinDto request){
+    public ApiResponse<RestaurantResponseDTO.RestaurantResultDTO> addStore(@RequestBody @Valid RestaurantRequestDTO.RestaurantDto request){
         Restaurant restaurant = restaurantCommandService.addRestaurant(request);
-        return ApiResponse.onSuccess(RestaurantConverter.toJoinResultDTO(restaurant));
+        return ApiResponse.onSuccess(RestaurantConverter.toRestaurantResultDTO(restaurant));
     }
 }

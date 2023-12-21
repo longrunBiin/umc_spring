@@ -9,14 +9,14 @@ import umc.spring.web.dto.mission.MissionResponseDTO;
 import java.time.LocalDateTime;
 
 public class MissionConverter {
-    public static MissionResponseDTO.JoinResultDTO toJoinResultDTO(Mission mission) {
-        return MissionResponseDTO.JoinResultDTO.builder()
+    public static MissionResponseDTO.MissionResultDTO toJoinResultDTO(Mission mission) {
+        return MissionResponseDTO.MissionResultDTO.builder()
                 .missionId(mission.getMissionId())
                 .createdAt(LocalDateTime.now())
                 .build();
     }
 
-    public static Mission toMission(MissionRequestDTO.JoinDto request) {
+    public static Mission toMission(MissionRequestDTO.MissionDto request) {
 
         MissionStatus status = null;
 

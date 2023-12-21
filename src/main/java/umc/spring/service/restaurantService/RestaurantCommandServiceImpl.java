@@ -22,7 +22,7 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
 
     @Override
     @Transactional
-    public Restaurant addRestaurant(RestaurantRequestDTO.JoinDto request) {
+    public Restaurant addRestaurant(RestaurantRequestDTO.RestaurantDto request) {
         Restaurant restaurant = RestaurantConverter.toRestaurant(request);
         String regionName = request.getAddress();
 

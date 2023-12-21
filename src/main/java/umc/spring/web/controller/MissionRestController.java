@@ -21,7 +21,7 @@ public class MissionRestController {
     private final MissionCommandService missionCommandService;
 
     @PostMapping("/addMissions/{storeId}")
-    public ApiResponse<MissionResponseDTO.JoinResultDTO> addRestaurant(@RequestBody @Valid MissionRequestDTO.JoinDto request, @PathVariable long storeId){
+    public ApiResponse<MissionResponseDTO.MissionResultDTO> addRestaurant(@RequestBody @Valid MissionRequestDTO.MissionDto request, @PathVariable long storeId){
         Mission mission = missionCommandService.addMission(storeId, request);
         return ApiResponse.onSuccess(MissionConverter.toJoinResultDTO(mission));
     }

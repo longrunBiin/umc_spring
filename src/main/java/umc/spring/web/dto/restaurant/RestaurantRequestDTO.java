@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RestaurantRequestDTO {
     @Getter
-    public static class JoinDto{
+    public static class RestaurantDto{
         @NotBlank
         String name;
         @NotNull

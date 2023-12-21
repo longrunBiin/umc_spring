@@ -25,7 +25,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
 
     @Override
     @Transactional
-    public Review writeReview(ReviewRequestDTO.JoinDto request) {
+    public Review writeReview(ReviewRequestDTO.reviewDto request) {
         Review newReview = ReviewConverter.toReview(request);
 
         List<Review> reviewList = request.getReviewList().stream()

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MissionRequestDTO {
     @Getter
-    public static class JoinDto {
+    public static class MissionDto {
         @NotBlank
         String name;
         @NotNull

@@ -18,14 +18,14 @@ import java.util.stream.Collectors;
 
 public class ReviewConverter {
 
-    public static ReviewResponseDTO.JoinResultDTO toWriteReviewResultDTO(Review review){
-        return ReviewResponseDTO.JoinResultDTO.builder()
+    public static ReviewResponseDTO.ReviewResultDTO toWriteReviewResultDTO(Review review){
+        return ReviewResponseDTO.ReviewResultDTO.builder()
                 .reviewId(review.getReviewId())
                 .memberId(review.getMember().getId())
                 .build();
     }
 
-    public static Review toReview(ReviewRequestDTO.JoinDto request){
+    public static Review toReview(ReviewRequestDTO.reviewDto request){
 
 
         return Review.builder()
