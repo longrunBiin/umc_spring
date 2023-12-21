@@ -16,5 +16,11 @@ public class RestaurantRequestDTO {
         String name;
         @NotNull
         String address;
+        @NotNull
+        String title;
+        @NotNull
+        Float score;
+        @NotNull
+        String content;
     }
 }

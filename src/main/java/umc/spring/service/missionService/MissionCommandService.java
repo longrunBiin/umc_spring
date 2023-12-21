@@ -9,5 +9,5 @@ import umc.spring.web.dto.mission.MissionRequestDTO;
 public interface MissionCommandService {
     Mission addMission(long storeId, MissionRequestDTO.JoinDto request);
 
-    MemberMission challengeMission(long missionId, long memberId);
+//    MemberMission challengeMission(long missionId, long memberId);
 }

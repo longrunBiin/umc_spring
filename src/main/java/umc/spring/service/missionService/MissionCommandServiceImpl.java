@@ -35,11 +35,11 @@ public class MissionCommandServiceImpl implements MissionCommandService {
         return missionRepository.save(mission);
     }
 
-    @Override
-    public MemberMission challengeMission(long missionId, long memberId) {
-        MemberMission mission = memberMissionRepository.findByMissionIdAndMemberId(missionId, memberId).orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_FOUND));
-
-        mission.setMissionStatus();
-        return memberMissionRepository.save(mission);
-    }
+//    @Override
+//    public MemberMission challengeMission(long missionId, long memberId) {
+//        MemberMission mission = memberMissionRepository.findByMissionIdAndMemberId(missionId, memberId).orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_FOUND));
+//
+//        mission.setMissionStatus();
+//        return memberMissionRepository.save(mission);
+//    }
 }

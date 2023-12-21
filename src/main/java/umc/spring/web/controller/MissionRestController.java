@@ -26,9 +26,9 @@ public class MissionRestController {
         return ApiResponse.onSuccess(MissionConverter.toJoinResultDTO(mission));
     }
 
-    @GetMapping("{missionId}/members/{memberId}")
-    public ApiResponse<MissionResponseDTO.JoinResultDTO> challengeMission(@PathVariable long missionId, @PathVariable long memberId){
-        MemberMission memberMission = missionCommandService.challengeMission(missionId, memberId);
-        return ApiResponse.onSuccess(MemberMissionConverter.toChallengeMissionReulstDto(memberMission));
-    }
+//    @GetMapping("{missionId}/members/{memberId}")
+//    public ApiResponse<MissionResponseDTO.JoinResultDTO> challengeMission(@PathVariable long missionId, @PathVariable long memberId){
+//        MemberMission memberMission = missionCommandService.challengeMission(missionId, memberId);
+//        return ApiResponse.onSuccess(MemberMissionConverter.toChallengeMissionReulstDto(memberMission));
+//    }
 }

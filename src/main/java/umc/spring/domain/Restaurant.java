@@ -30,6 +30,9 @@ public class Restaurant extends BaseEntity {
     private Region region;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
+    private List<Review> reviewList;
+
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<Mission> missionList = new ArrayList<>();
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)

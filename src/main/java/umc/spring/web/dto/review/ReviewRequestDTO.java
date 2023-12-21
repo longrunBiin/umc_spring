@@ -12,7 +12,7 @@ public class ReviewRequestDTO {
     @Getter
     public static class JoinDto{
         @NotNull
-        Integer score;
+        Float score;
         @Size(min = 5, max = 50)
         String contents;
 

@@ -18,11 +18,19 @@ public class Review extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
 
-    private Integer Score;
+    private Float score;
 
     private String content;
 
-    private Long memberId;
+    private String title;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @OneToMany(mappedBy = "review", cascade = CascadeType.ALL)
     private List<MemberReview> memberReviewList = new ArrayList<>();
