@@ -43,10 +43,5 @@ public class RestaurantQueryServiceImpl implements RestaurantQueryService{
         return memberPage;
     }
 
-    @Override
-    public Page<Mission> getMissionList(Long restaurantId, Integer page) {
-        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
-        Page<Mission> missionPage = missionRepository.findAllByRestaurant(restaurant, PageRequest.of(page, 10));
-        return missionPage;
-    }
+
 }

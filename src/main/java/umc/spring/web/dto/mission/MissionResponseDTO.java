@@ -5,8 +5,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.spring.domain.enums.MissionStatus;
+import umc.spring.web.dto.restaurant.RestaurantResponseDTO;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class MissionResponseDTO {
     @Builder
@@ -25,6 +28,26 @@ public class MissionResponseDTO {
 
         private MissionStatus missionStatus;
     }
-
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MissionPreViewDTO{
+        Integer point;
+        String content;
+        LocalDate createdAt;
+    }
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MissionPreViewListDTO{
+        List<MissionResponseDTO.MissionPreViewDTO> missionList;
+        Integer listSize;
+        Integer totalPage;
+        Long totalElements;
+        Boolean isFirst;
+        Boolean isLast;
+    }
 
 }

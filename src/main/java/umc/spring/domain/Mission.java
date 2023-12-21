@@ -40,6 +40,10 @@ public class Mission extends BaseEntity {
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
     @OneToMany(mappedBy = "mission", cascade = CascadeType.ALL)
     private List<MemberMission> userMissionList = new ArrayList<>();
 

@@ -14,5 +14,5 @@ public interface RestaurantQueryService {
 
     Page<Review> getMemberReviewList(Long memberId, Integer page);
 
-    Page<Mission> getMissionList(Long restaurantId, Integer page);
+
 }
